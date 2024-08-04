@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatic.mybaticPractice.Mapper.UserMapper">
+
+    <resultMap id="resultMap" type="com.mybatic.mybaticPractice.Model.Entity.Employee">
+        <id column="id" property="id"/>
+        <result column="fullName" property="fullName"/>
+        <result column="age" property="age"/>
+        <result column="email" property="email"/>
+    </resultMap>
+
+    <insert id="save">
+        INSERT INTO Employee (fullName, age, email)
+        VALUES(#{addUser.fullName}, #{addUser.age}, #{addUser.email});
+    </insert>
+
+</mapper>
